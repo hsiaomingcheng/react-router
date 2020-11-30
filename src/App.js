@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {ProvideAuth} from './context';
+import Login from './pages/LoginPage/LoginPage';
+import Main from './pages/Main/Main';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProvideAuth>
+        <Router>
+          <Switch>
+            <Route path="/login">
+              <Login/>
+            </Route>
+            <Main/>
+          </Switch>
+        </Router>
+      </ProvideAuth>
     </div>
   );
 }
