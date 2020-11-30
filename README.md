@@ -10,9 +10,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 3. 使用者在登入狀態時，再進入/login路徑，要導到/(首頁)去
 
 ## 日程紀錄
-    2020/11/30  
+**2020/11/30**  
     新增 react-router與全局context   
-    新增 Code-Splitting lazy load page
+    新增 Code-Splitting lazy load page    
+    新增 修正react-router 404失效問題，原因是switch必須接著包route否則會造成路徑判斷失效問題，[參考文章](https://github.com/ReactTraining/react-router/issues/7076)
 
 ## Available Scripts
 
