@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+因為只是練習，登入狀態寫在context裡面，暫時需要透過手動方式更改user狀態才可檢查登入畫面。  
+
+待處裡
+1. 將更改使用者登入狀態的方法與狀態，都寫在context(因為不想裝redux)
+2. 使用者輸入其他未存在頁面路徑的時候，導頁到404 page
+3. 使用者在登入狀態時，再進入/login路徑，要導到/(首頁)去
+
 ## 日程紀錄
     2020/11/30  
     新增 react-router與全局context   
