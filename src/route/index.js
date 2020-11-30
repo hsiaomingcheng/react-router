@@ -1,18 +1,34 @@
 import React from 'react';
-import HomePage from '../pages/HomePage/HomePage'
-import AboutPage from '../pages/AboutPage/AboutPage'
 
 export const routes = [
     {
         name: '首頁',
         path: '/',
-        component: HomePage,
+        component: React.lazy(() =>
+            import(
+                /*webpackChunkName:"HomePage"*/ /*webpackMode:"lazy"*/ '../pages/HomePage/HomePage'
+            )
+        ),
         exact: true,
     },
     {
         name: '關於我們',
         path: '/about',
-        component: AboutPage,
+        component: React.lazy(() =>
+            import(
+                /*webpackChunkName:"AboutPage"*/ /*webpackMode:"lazy"*/ '../pages/AboutPage/AboutPage'
+            )
+        ),
+        exact: true,
+    },
+    {
+        name: '產品項目',
+        path: '/product',
+        component: React.lazy(() =>
+            import(
+                /*webpackChunkName:"ProductPage"*/ /*webpackMode:"lazy"*/ '../pages/ProductPage/ProductPage'
+            )
+        ),
         exact: true,
     },
 ];

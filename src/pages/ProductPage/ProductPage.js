@@ -1,11 +1,11 @@
 import React from "react";
 import Header from '../../component/Header/Header';
 
-export default function HomePage() {
+export default function ProductPage() {
     return (
         <>
             <Header />
-            <h3>Home</h3>
+            <h3>Product</h3>
         </>
     );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {ProvideAuth} from './context';
-import Login from './pages/LoginPage/LoginPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 import Main from './pages/Main/Main';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <Router>
           <Switch>
             <Route path="/login">
-              <Login/>
+              <LoginPage/>
             </Route>
             <Main/>
           </Switch>

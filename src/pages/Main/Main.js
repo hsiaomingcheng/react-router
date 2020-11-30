@@ -1,5 +1,5 @@
 import {Redirect, Route} from "react-router-dom";
-import React from "react";
+import React, {Suspense} from "react";
 import {useAuth} from '../../context';
 import {routes} from "../../route";
 
@@ -17,7 +17,9 @@ export default function Main() {
                 exact={e.exact}
                 render={({location}) =>
                     auth.user ? (
-                        <e.component/>
+                        <Suspense fallback={<h1>Loading profile...</h1>}>
+                            <e.component/>
+                        </Suspense>
                     ) : (
                         <Redirect
                             to={{

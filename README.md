@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 日程紀錄
     2020/11/30  
     新增 react-router與全局context   
+    新增 Code-Splitting lazy load page
 
 ## Available Scripts
 
