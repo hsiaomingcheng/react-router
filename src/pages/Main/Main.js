@@ -13,6 +13,16 @@ const loginPage = {
     ),
 };
 
+const notMatchPage = {
+    name: '找不到此頁面',
+    path: '*',
+    component: React.lazy(() =>
+        import(
+            /*webpackChunkName:"404"*/ /*webpackMode:"lazy"*/ '../NotMatchPage/NotMatchPage'
+        )
+    ),
+};
+
 // location帶有四個參數可以使用
 // pathname、search、hash、state
 
@@ -23,18 +33,9 @@ export default function Main() {
         <Suspense fallback={<h1>Loading profile...</h1>}>
             <Router>
                 <Switch>
-                    <Route
-                        path="/login"
-                        render={() =>
-                            !auth.user ?
-                                <loginPage.component/>
-                                :
-                                <Redirect
-                                    to={{
-                                        pathname: "/"
-                                    }}
-                                />}
-                    />
+                    <Route path="/login">
+                        <loginPage.component/>
+                    </Route>
                     {
                         routes.map((e, index) => {
                             return <Route
@@ -56,6 +57,9 @@ export default function Main() {
                             />
                         })
                     }
+                    <Route path="*">
+                        <notMatchPage.component/>
+                    </Route>
                 </Switch>
             </Router>
         </Suspense>

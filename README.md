@@ -2,10 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-因為只是練習，登入狀態寫在context裡面，暫時需要透過手動方式更改user狀態才可檢查登入畫面。  
+用來練習router架構設置與熟悉其作用方式，加入context學習其基礎
 
-待處裡
-1. 將更改使用者登入狀態的方法與狀態，都寫在context(因為不想裝redux)
+登入狀態的控管與狀態之切換方法，皆放置在context供全局存取
+1. 判斷`auth.user`狀態決定是否導向至登入頁
+2. 練習設定404(noMatchPage)導頁
+3. 使用lazy load方式，優化初始載入速度
 
 ## 日程紀錄
 **2020/11/30**  
@@ -15,6 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 **2020/12/01**  
     新增 使用者在登入狀態時，再進入/login路徑，會重導向到/(首頁)去   
+    新增 新增登入按鈕與方法，修正route結構(抽出404單獨放)
 
 ## Available Scripts
 

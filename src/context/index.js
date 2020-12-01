@@ -1,4 +1,4 @@
-import React, {createContext, useContext} from "react";
+import React, {createContext, useContext, useState} from "react";
 
 /** For more details on
  * `authContext`, `ProvideAuth`, `useAuth` and `useProvideAuth`
@@ -7,13 +7,20 @@ import React, {createContext, useContext} from "react";
 export const authContext = createContext();
 
 // 全域 初始狀態樹
-const initContextObject = {
-    user: null,
-}
+// const initContextObject = {
+//     user: null,
+// }
 
 export function ProvideAuth({children}) {
+
+    const [user, setUser] = useState(false);
+
+    function toggleUser() {
+        setUser(!user);
+    }
+
     return (
-        <authContext.Provider value={initContextObject}>
+        <authContext.Provider value={{user, toggleUser}}>
             {children}
         </authContext.Provider>
     );

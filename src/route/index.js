@@ -31,13 +31,4 @@ export const routes = [
         ),
         exact: true,
     },
-    {
-        name: '找不到此頁面',
-        path: '*',
-        component: React.lazy(() =>
-            import(
-                /*webpackChunkName:"404"*/ /*webpackMode:"lazy"*/ '../pages/NotMatchPage/NotMatchPage'
-                )
-        ),
-    },
 ];
