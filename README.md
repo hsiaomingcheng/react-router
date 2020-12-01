@@ -6,14 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 待處裡
 1. 將更改使用者登入狀態的方法與狀態，都寫在context(因為不想裝redux)
-2. 使用者輸入其他未存在頁面路徑的時候，導頁到404 page
-3. 使用者在登入狀態時，再進入/login路徑，要導到/(首頁)去
 
 ## 日程紀錄
 **2020/11/30**  
     新增 react-router與全局context   
     新增 Code-Splitting lazy load page    
     新增 修正react-router 404失效問題，原因是switch必須接著包route否則會造成路徑判斷失效問題，[參考文章](https://github.com/ReactTraining/react-router/issues/7076)
+
+**2020/12/01**  
+    新增 使用者在登入狀態時，再進入/login路徑，會重導向到/(首頁)去   
 
 ## Available Scripts
 

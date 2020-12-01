@@ -23,9 +23,18 @@ export default function Main() {
         <Suspense fallback={<h1>Loading profile...</h1>}>
             <Router>
                 <Switch>
-                    <Route path="/login">
-                        <loginPage.component/>
-                    </Route>
+                    <Route
+                        path="/login"
+                        render={() =>
+                            !auth.user ?
+                                <loginPage.component/>
+                                :
+                                <Redirect
+                                    to={{
+                                        pathname: "/"
+                                    }}
+                                />}
+                    />
                     {
                         routes.map((e, index) => {
                             return <Route
